@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candela Obregón | Diseño & Arquitectura</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de la fuente "Inter" (similar a la de la referencia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Aplicamos la fuente base */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Pequeña animación para las tarjetas de proyecto */
+        .project-card img {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        .project-card .project-info {
+            transition: color 0.3s ease;
+        }
+        .project-card:hover .project-info {
+            color: #525252; /* text-neutral-600 */
+        }
+    </style>
+</head>
+<body class="bg-white text-neutral-800">
+
+    <!-- 
+      ENCABEZADO FIJO
+      Usando el logo que subiste.
+    -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" title="Inicio - Candela Obregón">
+                        <!-- 
+                          IMPORTANTE: 
+                          Asegúrate de que 'image_b1711e.png' esté en la misma carpeta que este archivo HTML.
+                        -->
+                        <img class="h-10 md:h-12 w-auto" src="image_b1711e.png" alt="Logo Candela Obregón">
+                    </a>
+                </div>
+                
+                <!-- Navegación de Escritorio -->
+                <nav class="hidden md:flex md:items-center md:space-x-8 lg:space-x-12">
+                    <a href="#proyectos" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Proyectos</a>
+                    <a href="#estudio" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Estudio</a>
+                    <a href="#contacto" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Contacto</a>
+                </nav>
+
+                <!-- Botón de Menú Móvil (Hamburguesa) -->
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <!-- Icono de hamburguesa -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                    <!-- Aquí iría el menú desplegable para móviles, que requiere JS -->
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="pt-20 md:pt-24">
+
+        <!-- 
+          SECCIÓN HERO / PROYECTO DESTACADO
+          Reemplaza la imagen de placehold.co
+        -->
+        <section class="relative w-full h-[60vh] md:h-[calc(100vh-96px)] bg-neutral-900 text-white">
+            <!-- Imagen de Fondo -->
+            <img 
+                src="https://placehold.co/1920x1080/333/999?text=Proyecto+Destacado"
+                alt="Vista impresionante de un proyecto de arquitectura" 
+                class="w-full h-full object-cover opacity-70"
+                onerror="this.src='https://placehold.co/1920x1080/333/999?text=Error+al+cargar+imagen'"
+            >
+            <!-- Título Superpuesto -->
+            <div class="absolute bottom-10 left-4 sm:left-6 lg:left-12">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight">
+                    Residencia en la Montaña
+                </h1>
+                <p class="mt-2 text-lg font-light text-neutral-300">Diseño residencial, 2024</p>
+            </div>
+        </section>
+
+        <!-- 
+          SECCIÓN DE PROYECTOS (GRID)
+          Este es el portafolio. Reemplaza todas las imágenes y textos.
+        -->
+        <section id="proyectos" class="py-16 lg:py-24 bg-white">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
+                
+                <h2 class="text-3xl lg:text-4xl font-light text-neutral-800 mb-12 lg:mb-16">
+                    Proyectos Recientes
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 lg:gap-y-16">
+
+                    <!-- Proyecto 1 -->
+                    <a href="#" class="group project-card">
+                        <div class="overflow-hidden bg-neutral-100">
+                            <img 
+                                src="https://placehold.co/600x450/555/eee?text=Proyecto+1" 
+                                alt="Descripción del Proyecto 1" 
+                                class="w-full h-72 md:h-80 object-cover"
+                                onerror="this.src='https://placehold.co/600x450/555/eee?text=Proyecto+1'"
+                            >
+                        </div>
+                        <div class="mt-5 project-info">
+                            <h3 class="text-xl font-medium text-neutral-900">Edificio Corporativo Z</h3>
+                            <p class="text-sm text-neutral-600 mt-1">Comercial, 2023</p>
+                        </div>
+                    </a>
+
+                    <!-- Proyecto 2 -->
+                    <a href="#" class="group project-card">
+                        <div class="overflow-hidden bg-neutral-100">
+                            <img 
+                                src="https://placehold.co/600x450/666/eee?text=Proyecto+2" 
+                                alt="Descripción del Proyecto 2" 
+                                class="w-full h-72 md:h-80 object-cover"
+                                onerror="this.src='https://placehold.co/600x450/666/eee?text=Proyecto+2'"
+                            >
+                        </div>
+                        <div class="mt-5 project-info">
+                            <h3 class="text-xl font-medium text-neutral-900">Casa de Playa</h3>
+                            <p class="text-sm text-neutral-600 mt-1">Residencial, 2024</p>
+                        </div>
+                    </a>
+
+                    <!-- Proyecto 3 -->
+                    <a href="#" class="group project-card">
+                        <div class="overflow-hidden bg-neutral-100">
+                            <img 
+                                src="https://placehold.co/600x450/777/eee?text=Proyecto+3" 
+                                alt="Descripción del Proyecto 3" 
+                                class="w-full h-72 md:h-80 object-cover"
+                                onerror="this.src='https://placehold.co/600x450/777/eee?text=Proyecto+3'"
+                            >
+                        </div>
+                        <div class="mt-5 project-info">
+                            <h3 class="text-xl font-medium text-neutral-900">Restaurante Mirador</h3>
+                            <p class="text-sm text-neutral-600 mt-1">Hospitalidad, 2022</p>
+                        </div>
+                    </a>
+
+                    <!-- Proyecto 4 (Opcional, añade más) -->
+                    <a href="#" class="group project-card">
+                        <div class="overflow-hidden bg-neutral-100">
+                            <img 
+                                src="https://placehold.co/600x450/888/eee?text=Proyecto+4" 
+                                alt="Descripción del Proyecto 4" 
+                                class="w-full h-72 md:h-80 object-cover"
+                                onerror="this.src='https://placehold.co/600x450/888/eee?text=Proyecto+4'"
+                            >
+                        </div>
+                        <div class="mt-5 project-info">
+                            <h3 class="text-xl font-medium text-neutral-900">Renovación Centro Cultural</h3>
+                            <p class="text-sm text-neutral-600 mt-1">Público, 2023</p>
+                        </div>
+                    </a>
+
+                    <!-- Proyecto 5 (Opcional, añade más) -->
+                    <a href="#" class="group project-card">
+                        <div class="overflow-hidden bg-neutral-100">
+                            <img 
+                                src="https://placehold.co/600x450/999/eee?text=Proyecto+5" 
+                                alt="Descripción del Proyecto 5" 
+                                class="w-full h-72 md:h-80 object-cover"
+                                onerror="this.src='https://placehold.co/600x450/999/eee?text=Proyecto+5'"
+                            >
+                        </div>
+                        <div class="mt-5 project-info">
+                            <h3 class="text-xl font-medium text-neutral-900">Pabellón de Verano</h3>
+                            <p class="text-sm text-neutral-600 mt-1">Temporal, 2024</p>
+                        </div>
+                    </a>
+
+                    <!-- Proyecto 6 (Opcional, añade más) -->
+                    <a href="#" class="group project-card">
+                        <div class="overflow-hidden bg-neutral-100">
+                            <img 
+                                src="https://placehold.co/600x450/aaa/eee?text=Proyecto+6" 
+                                alt="Descripción del Proyecto 6" 
+                                class="w-full h-72 md:h-80 object-cover"
+                                onerror="this.src='https://placehold.co/600x450/aaa/eee?text=Proyecto+6'"
+                            >
+                        </div>
+                        <div class="mt-5 project-info">
+                            <h3 class="text-xl font-medium text-neutral-900">Loft Urbano</h3>
+                            <p class="text-sm text-neutral-600 mt-1">Interiorismo, 2023</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          SECCIÓN ESTUDIO (SOBRE MÍ)
+          Reemplaza el texto y la imagen.
+        -->
+        <section id="estudio" class="py-16 lg:py-24 bg-neutral-50 border-y border-neutral-200">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    
+                    <!-- Imagen del Estudio -->
+                    <div class="w-full h-96 md:h-[500px] bg-neutral-200">
+                        <img 
+                            src="https://placehold.co/800x600/444/ccc?text=Oficina+o+Retrato" 
+                            alt="Foto del estudio o de la arquitecta" 
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://placehold.co/800x600/444/ccc?text=Foto+Estudio'"
+                        >
+                    </div>
+
+                    <!-- Texto del Estudio -->
+                    <div class="max-w-lg">
+                        <h2 class="text-3xl lg:text-4xl font-light text-neutral-800 mb-6">
+                            Sobre el Estudio
+                        </h2>
+                        <div class="space-y-4 text-neutral-700 text-base md:text-lg leading-relaxed">
+                            <p>
+                                Candela Obregón Diseño & Arquitectura es un estudio enfocado en la creación de espacios que combinan funcionalidad atemporal y una estética depurada.
+                            </p>
+                            <p>
+                                Creemos en un diseño colaborativo, trabajando de cerca con cada cliente para traducir sus visiones en realidades construidas. Nuestra filosofía se basa en la luz, el material y el contexto.
+                            </p>
+                            <!-- Reemplaza con tu propia biografía o filosofía -->
+                        </div>
+                        <a href="#contacto" class="inline-block mt-8 text-sm font-medium uppercase tracking-wider text-neutral-900 border-b-2 border-neutral-900 hover:border-neutral-500 hover:text-neutral-500 transition-all duration-300">
+                            Ponerse en contacto
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+      PIE DE PÁGINA Y CONTACTO
+    -->
+    <footer id="contacto" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between gap-10">
+                
+                <!-- Información de Contacto -->
+                <div class="md:w-1/2 lg:w-1/3">
+                    <h3 class="text-xl font-medium text-neutral-900 mb-4">Contacto</h3>
+                    <div class="space-y-2 text-neutral-700">
+                        <p>
+                            <a href="mailto:info@candelaobregon.com" class="hover:text-neutral-900 transition-colors">info@candelaobregon.com</a>
+                        </p>
+                        <p>
+                            +54 9 11 1234-5678
+                        </p>
+                        <p>
+                            Buenos Aires, Argentina
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales y Copyright -->
+                <div class="flex flex-col justify-between md:w-1/2 lg:w-2/3 md:text-right">
+                    <div class="flex md:justify-end space-x-6 mb-8 md:mb-0">
+                        <a href="#" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors">Instagram</a>
+                        <a href="#" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors">LinkedIn</a>
+                        <a href="#" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors">Pinterest</a>
+                    </div>
+                    <p class="text-sm text-neutral-500 mt-10">
+                        &copy; <span id="current-year"></span> Candela Obregón. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Pequeño script para el año actual en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
