@@ -1,406 +1,359 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candela Obregón | Diseño & Arquitectura</title>
+    <title>Candela Obregón | Arquitectura & Facility Management</title>
+    <meta name="description" content="Servicios de arquitectura, mantenimiento industrial, facility management y habilitaciones municipales por la Arq. Candela Obregón.">
     
-    <!-- Carga de Tailwind CSS: Es el framework que usamos para los estilos -->
+    <!-- Tailwind CSS (Estilos Modernos) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Carga de la fuente "Inter" desde Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Fuentes de Google (Inter para un look limpio y técnico) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Estilos CSS personalizados -->
-    <style>
-        /* Aplicamos la fuente base a toda la página */
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased; /* Mejora el renderizado del texto en Mac */
-            -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado del texto en Firefox */
-        }
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        /* Se eliminó el CSS obsoleto para .project-card, 
-           ya que esa sección no está en uso. */
-        
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', // Slate 900 - Oscuro profesional
+                        accent: '#0ea5e9',  // Sky 500 - Azul técnico/arquitectura
+                        secondary: '#64748b', // Slate 500 - Texto secundario
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Ajustes finos para móviles */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        /* Efecto sutil en las tarjetas */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
-<body class="bg-white text-neutral-800">
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
 
-    <!-- 
-      ============================================
-      ENCABEZADO FIJO (HEADER)
-      ============================================
-      - fixed: Fija el header en la parte superior.
-      - top-0 left-0 right-0: Lo posiciona en la parte superior.
-      - z-50: Asegura que esté por encima de otro contenido.
-      - bg-white/95: Fondo blanco con 95% de opacidad (para efecto translúcido).
-      - backdrop-blur-sm: Aplica un ligero desenfoque al contenido que pasa por debajo.
-      - border-b: Añade un borde inferior.
-    -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200">
-        <!-- Contenedor principal del header -->
-        <!-- 
-          - max-w-screen-2xl: Ancho máximo del contenido.
-          - mx-auto: Centra el contenido horizontalmente.
-          - px-4 sm:px-6 lg:px-12: Padding horizontal que se adapta al tamaño de pantalla.
-        -->
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
-            <!-- 
-              - flex: Activa Flexbox para alinear elementos.
-              - justify-between: Separa los elementos (logo a la izq., nav a la der.).
-              - items-center: Centra los elementos verticalmente.
-              - h-20 md:h-24: Altura del header (20 en móvil, 24 en escritorio).
-            -->
-            <div class="flex justify-between items-center h-20 md:h-24">
-                
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" title="Inicio - Candela Obregón">
-                        <!-- 
-                          IMPORTANTE: 
-                          Asegúrate de que 'image_b1711e.png' esté en la misma carpeta.
-                          - h-10 md:h-12: Altura del logo (10 en móvil, 12 en escritorio).
-                          - w-auto: Ancho automático para mantener la proporción.
-                        -->
-                        <img class="h-10 md:h-12 w-auto" src="image_b1711e.png" alt="Logo Candela Obregón">
-                    </a>
-                </div>
-                
-                <!-- 
-                  Navegación de Escritorio
-                  - hidden: Oculto por defecto (en móvil).
-                  - md:flex: Se muestra como 'flex' en pantallas medianas (md) y superiores.
-                  - md:space-x-8: Espacio horizontal entre los enlaces en escritorio.
-                -->
-                <nav class="hidden md:flex md:items-center md:space-x-8 lg:space-x-12">
-                    <!-- ENLACES DE NAVEGACIÓN ACTUALIZADOS -->
-                    <a href="#servicios" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Servicios</a>
-                    <a href="#quien-soy" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Quién Soy</a>
-                    <a href="#contacto" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Contacto</a>
-                </nav>
-
-                <!-- 
-                  Botón de Menú Móvil (Hamburguesa)
-                  - md:hidden: Se muestra solo en pantallas pequeñas (móvil), se oculta en 'md' y superiores.
-                  - AÑADIDO: id="mobile-menu-toggle" para que JavaScript pueda controlarlo.
-                -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400" aria-expanded="false">
-                        <span class="sr-only">Abrir menú principal</span>
-                        <!-- Icono de hamburguesa (SVG) -->
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                    <!-- El menú desplegable para móviles requeriría JavaScript para funcionar -->
-                </div>
-
-            </div>
-        </div>
-
-        <!-- 
-          ============================================
-          MENÚ MÓVIL (NUEVO)
-          ============================================
-          - Este es el panel que se despliega en móviles.
-          - md:hidden: Se oculta en pantallas medianas y grandes.
-          - hidden: Está oculto por defecto hasta que se activa con JS.
-          - AÑADIDO: id="mobile-menu" para que JavaScript pueda mostrarlo/ocultarlo.
-        -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-neutral-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#servicios" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50">Servicios</a>
-                <a href="#quien-soy" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50">Quién Soy</a>
-                <a href="#contacto" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50">Contacto</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 
-      ============================================
-      CONTENIDO PRINCIPAL
-      ============================================
-      - pt-20 md:pt-24: Padding superior para dejar espacio al header fijo.
-    -->
-    <main class="pt-20 md:pt-24">
-
-        <!-- 
-          ============================================
-          SECCIÓN 1 — PORTADA (HERO) - (Contenido Reemplazado)
-          ============================================
-          - Altura aumentada a 70vh y centrado vertical
-        -->
-        <section class="relative w-full h-[70vh] md:h-[calc(100vh-96px)] bg-neutral-900 text-white flex flex-col justify-center">
-            
-            <!-- Imagen de Fondo (Reemplazada) -->
-            <img 
-                src="https://placehold.co/1920x1080/2a2a2a/ffffff?text=Infraestructura+Industrial"
-                alt="Infraestructura industrial y gestión operativa" 
-                class="absolute inset-0 w-full h-full object-cover opacity-60"
-                onerror="this.src='https://placehold.co/1920x1080/333/999?text=Error+al+cargar+imagen'"
-            >
-            
-            <!-- Contenido de Texto Superpuesto (Reemplazado) -->
-            <!-- 
-              - relative: Para que esté por encima de la imagen.
-              - z-10: Asegura que el texto esté sobre la imagen.
-            -->
-            <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 z-10">
-                <div class="max-w-3xl">
-                    <!-- Título principal (SECCIÓN 1) -->
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
-                        Arquitecta Industrial & Facility Manager
-                    </h1>
-                    <!-- Subtítulo (SECCIÓN 1) -->
-                    <p class="mt-4 text-xl lg:text-2xl font-light text-neutral-200">
-                        Optimización operativa, infraestructura inteligente y mantenimiento estratégico para empresas.
-                    </p>
-                    <!-- Párrafo Intro (SECCIÓN 1) -->
-                    <p class="mt-6 text-lg font-light text-neutral-300 max-w-2xl">
-                        Soy Candela Obregón, Arquitecta especializada en Facility Management, infraestructura industrial y gestión operativa.
-                        Ayudo a empresas a mejorar su funcionamiento mediante soluciones técnicas, estratégicas y de alto impacto en su productividad.
-                    </p>
-                    <!-- Botón (SECCIÓN 1) -->
-                    <a href="#servicios" class="inline-block mt-8 bg-white text-neutral-900 font-medium uppercase tracking-wider text-sm px-8 py-3 rounded-sm hover:bg-neutral-200 transition-colors duration-300">
-                        Conocer mis servicios
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 
-          ============================================
-          SECCIÓN 2 — QUIÉN SOY (SOBRE MÍ) - (Contenido Reemplazado)
-          ============================================
-          - ID cambiado a "quien-soy"
-        -->
-        <section id="quien-soy" class="py-16 lg:py-24 bg-neutral-50 border-y border-neutral-200">
-            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- 
-                  Grid de 2 columnas
-                -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
-                    
-                    <!-- Columna de Imagen del Estudio (Placeholder) -->
-                    <div class="w-full h-96 md:h-[500px] bg-neutral-200">
-                        <img 
-                            src="https://placehold.co/800x600/444/ccc?text=Oficina+o+Retrato" 
-                            alt="Foto del estudio o de la arquitecta" 
-                            class="w-full h-full object-cover"
-                            onerror="this.src='https://placehold.co/800x600/444/ccc?text=Foto+Estudio'"
-                        >
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Nombre -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="drafting-compass" class="h-8 w-8 text-primary"></i>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary tracking-tight">ARQ. CANDELA OBREGÓN</h1>
+                        <p class="text-xs text-secondary tracking-widest uppercase">Arquitectura & Gestión</p>
                     </div>
+                </div>
+                
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-accent font-medium transition">Inicio</a>
+                    <a href="#sobre-mi" class="text-gray-600 hover:text-accent font-medium transition">Sobre Mí</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-accent font-medium transition">Servicios</a>
+                    <a href="#contacto" class="px-5 py-2 bg-primary text-white rounded-md hover:bg-slate-800 transition shadow-lg shadow-slate-900/20">Contacto</a>
+                </div>
 
-                    <!-- Columna de Texto del Estudio (Contenido Reemplazado de SECCIÓN 2) -->
-                    <div class="max-w-lg">
-                        <h2 class="text-3xl lg:text-4xl font-light text-neutral-800 mb-6">
-                            Soy arquitecta de empresas.
-                        </h2>
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden flex flex-col pt-20 px-6 space-y-6">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-500">
+                <i data-lucide="x" class="h-8 w-8"></i>
+            </button>
+            <a href="#inicio" class="text-xl font-medium text-gray-800 mobile-link">Inicio</a>
+            <a href="#sobre-mi" class="text-xl font-medium text-gray-800 mobile-link">Sobre Mí</a>
+            <a href="#servicios" class="text-xl font-medium text-gray-800 mobile-link">Servicios</a>
+            <a href="#contacto" class="text-xl font-medium text-accent mobile-link">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Imagen de fondo decorativa -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Edificio industrial" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:w-2/3">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6">
+                    <span class="mr-2">●</span> Soluciones Integrales
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-primary leading-tight mb-6">
+                    Eficiencia, Seguridad y <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-600">Orden Operativo.</span>
+                </h1>
+                <p class="text-lg text-secondary mb-8 leading-relaxed max-w-2xl">
+                    Soy Candela Obregón. Transformo espacios industriales y corporativos mediante gestión técnica, mantenimiento preventivo y dirección de obra. Garantizo la continuidad operativa de tu planta.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#servicios" class="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-slate-800 transition md:py-4 md:text-lg shadow-lg">
+                        Ver Servicios
+                    </a>
+                    <a href="#contacto" class="inline-flex justify-center items-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 transition md:py-4 md:text-lg">
+                        Agendar Consultoría
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS SECTION -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-accent font-semibold tracking-wide uppercase">Mis Servicios</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-primary sm:text-4xl">
+                    Gestión Técnica & Arquitectura
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-secondary mx-auto">
+                    Soluciones diseñadas para reducir costos ocultos, aumentar la productividad y asegurar el cumplimiento normativo.
+                </p>
+            </div>
+
+            <!-- Grid de Servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Servicio 1: Facility Management -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="settings" class="text-blue-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Facility Management Integral</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Implemento y gestiono sistemas de mantenimiento preventivo, correctivo e inversiones que garantizan la continuidad operativa.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Indicadores reales (MTTR, KPIs)</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Reducción de fallas recurrentes</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Trazabilidad y seguridad</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2: Mantenimiento Industrial -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="wrench" class="text-indigo-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Mantenimiento Industrial</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Ejecución, organización y supervisión de tareas en sectores productivos y administrativos. Instalaciones que funcionan mejor por más tiempo.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Preventivos programados</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Correctivos críticos</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Diagnósticos de fallas</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3: Infraestructura -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="hard-hat" class="text-amber-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Infraestructura & Accesos</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Desarrollo soluciones para mejorar flujos logísticos y seguridad. Diseño, cálculo y gestión ante organismos.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Accesos viales</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Adecuaciones operativas</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Documentación técnica</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 4: Auditorías -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="clipboard-check" class="text-emerald-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Diagnósticos & Auditorías</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Relevo instalaciones, detecto fallas y determino dónde invertir primero. Informe ejecutivo y plan de acción.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Análisis de recurrencias</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Horas por rubro</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Priorización de inversión</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 5: Relevamientos -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="file-text" class="text-purple-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Relevamientos Técnicos</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Perfecto para empresas que necesitan regularizar, ampliar o adaptar sus instalaciones.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Planos y mediciones</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Carpetas técnicas</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Presentaciones municipales</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 6: Habilitaciones -->
+                <div class="service-card bg-gray-50 rounded-xl p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="building-2" class="text-rose-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Habilitaciones Municipales</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Gestión integral para industrias, comercios o depósitos. Olvídate de la burocracia.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Adecuaciones a normativa</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Documentación legal</li>
+                        <li class="flex items-start"><i data-lucide="check" class="h-4 w-4 text-accent mr-2 mt-1"></i>Requisitos técnicos</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 7: Consultoría (Destacado) -->
+                <div class="service-card bg-primary rounded-xl p-8 border border-gray-800 md:col-span-2 lg:col-span-3 text-center transition-all duration-300 shadow-xl">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-lucide="bar-chart-3" class="text-accent h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Consultoría Operativa y de Mantenimiento</h3>
+                    <p class="text-gray-300 mb-6 max-w-3xl mx-auto text-base leading-relaxed">
+                        Acompaño a empresas en la toma de decisiones basada en datos, priorización de tareas, ordenamiento de backlog y planificación estratégica.
+                        <br><span class="text-accent font-semibold mt-2 block">La meta: bajar costos ocultos y aumentar la productividad.</span>
+                    </p>
+                    <a href="#contacto" class="inline-flex items-center text-white font-medium hover:text-accent transition">
+                        Solicitar asesoramiento <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO SECTION -->
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    
+                    <!-- Información -->
+                    <div class="bg-primary p-10 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Hablemos de tu proyecto</h3>
+                            <p class="text-gray-300 mb-8">
+                                ¿Necesitas optimizar tu planta o regularizar tu edificación? Contáctame para un diagnóstico inicial.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i data-lucide="mail" class="h-6 w-6 text-accent mr-4"></i>
+                                    <span>contacto@candelaobregon.com</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="map-pin" class="h-6 w-6 text-accent mr-4"></i>
+                                    <span>Disponible para proyectos in-situ y consultorías.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="linkedin" class="h-6 w-6 text-accent mr-4"></i>
+                                    <span>/candelaobregon</span>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <div class="space-y-5 text-neutral-700 text-base md:text-lg leading-relaxed">
-                            <p>
-                                Mi trabajo une arquitectura, operación industrial y gestión del mantenimiento.
-                                Transformo espacios, procesos e infraestructura para que las empresas funcionen mejor, de manera más segura, más eficiente y con menos fallas.
-                            </p>
-                            <p>
-                                Mi experiencia en entornos industriales me permitió desarrollar una visión que integra:
-                            </p>
-                            <!-- Lista de especialidades (SECCIÓN 2) -->
-                            <ul class="space-y-2 list-inside list-none text-neutral-800">
-                                <li class="flex items-center">
-                                    <!-- Icono de check simple -->
-                                    <svg class="w-5 h-5 mr-2 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Diseño arquitectónico
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Mantenimiento preventivo y correctivo
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Seguridad industrial
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Análisis de fallas y recurrencias
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Optimización de sectores operativos
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Documentación técnica y habilitaciones
-                                </li>
-                            </ul>
-                            <p>
-                                Creo en la arquitectura aplicada a la operación real.
-                                Creo en soluciones inteligentes que mejoran el día a día de quienes trabajan en una planta o empresa.
-                            </p>
+                        <div class="mt-10">
+                            <div class="h-1 w-20 bg-accent rounded"></div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- 
-          ============================================
-          SECCIÓN 3 — LO QUE HAGO (SERVICIOS) - (Nueva Sección)
-          ============================================
-          - Reemplaza la sección de Proyectos de IA.
-          - ID cambiado a "servicios".
-        -->
-        <section id="servicios" class="py-16 lg:py-24 bg-white">
-            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12">
-                
-                <!-- Título de la Sección -->
-                <h2 class="text-3xl lg:text-4xl font-light text-neutral-800 mb-12 lg:mb-16 text-center">
-                    Lo que Hago
-                </h2>
-
-                <!-- 
-                  Cuadrícula (Grid) de Servicios
-                  - Se usa una grid de 2 columnas para dar más espacio al texto del servicio.
-                -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-
-                    <!-- Servicio 1: Tarjeta (Contenido de SECCIÓN 3) -->
-                    <div class="p-8 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-medium text-neutral-900">Gestión de Facilities y Mantenimiento</h3>
-                        <p class="text-base text-neutral-700 mt-3 leading-relaxed">
-                            Planifico, organizo y superviso tareas preventivas, correctivas y de inversión, asegurando continuidad operativa y reducción de fallas repetitivas.
-                        </p>
-                    </div>
-
-                    <!-- Servicio 2: Tarjeta (Contenido de SECCIÓN 3) -->
-                    <div class="p-8 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-medium text-neutral-900">Arquitectura Industrial</h3>
-                        <p class="text-base text-neutral-700 mt-3 leading-relaxed">
-                            Desarrollo proyectos para sectores productivos, accesos viales, infraestructura logística, adecuaciones edilicias y mejoras de funcionamiento.
-                        </p>
-                    </div>
-
-                    <!-- Servicio 3: Tarjeta (Contenido de SECCIÓN 3) -->
-                    <div class="p-8 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-medium text-neutral-900">Diagnósticos y Auditorías Técnicas</h3>
-                        <p class="text-base text-neutral-700 mt-3 leading-relaxed">
-                            Relevamientos, detección de fallas, análisis de horas por rubro, backlog, trazabilidad mensual y KPIs.
-                        </p>
-                    </div>
-
-                    <!-- Servicio 4: Tarjeta (Contenido de SECCIÓN 3) -->
-                    <div class="p-8 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-medium text-neutral-900">Gestión Documental & Habilitaciones</h3>
-                        <p class="text-base text-neutral-700 mt-3 leading-relaxed">
-                            Planos, documentación técnica, presupuestos, informes, presentaciones, trámites municipales.
-                        </p>
-                    </div>
-                    
-                    <!-- Servicio 5: Tarjeta (Contenido de SECCIÓN 3) -->
-                    <!-- md:col-span-2 hace que esta tarjeta ocupe las 2 columnas en escritorio -->
-                    <div class="p-8 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm md:col-span-2">
-                        <h3 class="text-xl font-medium text-neutral-900">Soluciones para fallas recurrentes</h3>
-                        <p class="text-base text-neutral-700 mt-3 leading-relaxed">
-                            Trabajo con análisis de sectores, demanda de horas y plan de mejora continua.
-                        </p>
+                    <!-- Formulario Simulado -->
+                    <div class="p-10">
+                        <form class="space-y-6" onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. Esta es una demo, por favor configura tu servidor de correo.');">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                                <input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-accent focus:border-accent" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Corporativo</label>
+                                <input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-accent focus:border-accent" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">¿En qué puedo ayudarte?</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-md focus:ring-accent focus:border-accent" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition">
+                                Enviar Mensaje
+                            </button>
+                        </form>
                     </div>
 
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <!-- 
-      ============================================
-      PIE DE PÁGINA Y CONTACTO (FOOTER)
-      ============================================
-    -->
-    <footer id="contacto" class="py-16 lg:py-20 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
-            <!-- 
-              - flex-col: Columnas en móvil.
-              - md:flex-row: Filas en escritorio.
-            -->
-            <div class="flex flex-col md:flex-row justify-between gap-10">
-                
-                <!-- Columna de Información de Contacto -->
-                <div class="md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-medium text-neutral-900 mb-4">Contacto</h3>
-                    <div class="space-y-2 text-neutral-700">
-                        <p>
-                            <a href="mailto:info@candelaobregon.com" class="hover:text-neutral-900 transition-colors">info@candelaobregon.com</a>
-                        </p>
-                        <p>
-                            +54 9 11 1234-5678
-                        </p>
-                        <p>
-                            Buenos Aires, Argentina
-                        </p>
-                    </div>
+    <!-- FOOTER -->
+    <footer class="bg-primary pt-10 pb-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i data-lucide="drafting-compass" class="h-6 w-6 text-gray-400"></i>
+                    <span class="text-gray-300 font-semibold tracking-wide">ARQ. CANDELA OBREGÓN</span>
                 </div>
-
-                <!-- Columna de Redes Sociales y Copyright -->
-                <div class="flex flex-col justify-between md:w-1/2 lg:w-2/3 md:text-right">
-                    <!-- Enlaces de Redes Sociales -->
-                    <div class="flex md:justify-end space-x-6 mb-8 md:mb-0">
-                        <a href="#" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors">Instagram</a>
-                        <a href="#" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors">LinkedIn</a>
-                        <a href="#" class="text-sm font-medium uppercase tracking-wider text-neutral-700 hover:text-neutral-900 transition-colors">Pinterest</a>
-                    </div>
-                    <!-- Copyright -->
-                    <p class="text-sm text-neutral-500 mt-10">
-                        &copy; <span id="current-year"></span> Candela Obregón. Todos los derechos reservados.
-                    </p>
-                </div>
+                <p class="text-gray-500 text-sm">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Todos los derechos reservados.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- 
-      ============================================
-      SCRIPT DE JAVASCRIPT
-      ============================================
-    -->
+    <!-- Scripts de Funcionalidad -->
     <script>
-        // Pequeño script para poner el año actual en el footer automáticamente.
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Inicializar Iconos
+        lucide.createIcons();
 
-        // --- SCRIPT PARA MENÚ MÓVIL (NUEVO) ---
+        // Menú Móvil Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const links = document.querySelectorAll('.mobile-link');
 
-        // 1. Obtenemos los elementos del DOM
-        const menuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuLinks = mobileMenu.querySelectorAll('.mobile-menu-link');
-
-        // 2. Función para mostrar/ocultar el menú
         function toggleMenu() {
-            // Alterna la clase 'hidden' en el menú
-            mobileMenu.classList.toggle('hidden');
-            
-            // Opcional: Cambia el estado de aria-expanded para accesibilidad
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            menu.classList.toggle('open');
         }
 
-        // 3. Añadimos el "click listener" al botón de hamburguesa
-        menuToggle.addEventListener('click', toggleMenu);
+        btn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
 
-        // 4. (Opcional) Cerramos el menú al hacer clic en un enlace
-        //    Esto es útil para páginas de una sola ancla (como esta)
-        menuLinks.forEach(link => {
+        // Cerrar menú al hacer click en un enlace
+        links.forEach(link => {
             link.addEventListener('click', () => {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    toggleMenu();
-                }
+                menu.classList.remove('open');
             });
         });
-
     </script>
-
 </body>
 </html>
