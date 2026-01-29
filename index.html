@@ -5,100 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candela Obregón | Project Architect & Facility Management</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fuentes Google: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                fontFamily: {
-                    sans: ['Montserrat', 'sans-serif'],
-                },
-                extend: {
-                    colors: {
-                        emet: {
-                            blue: '#0C71C3',
-                            dark: '#004b8d',
-                            text: '#777777',
-                            heading: '#333333',
-                            light: '#f7f7f7'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #777777;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: #333333;
-            font-weight: 700;
-        }
-
-        .btn-primary {
-            background-color: #0C71C3;
-            color: white;
-            border-radius: 9999px;
-            /* Pill shape */
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #004b8d;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(12, 113, 195, 0.3);
-        }
-
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Efecto de linea azul debajo de titulos si se desea, estilo emet */
-        .section-separator {
-            width: 50px;
-            height: 3px;
-            background-color: #0C71C3;
-            margin: 1rem auto;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: #333333;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: #0C71C3;
-        }
-
-        .card-shadow {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .card-shadow:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
-    </style>
 </head>
 
 <body class="antialiased bg-white">
@@ -127,7 +38,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <img src="img/logo.png" alt="Logo Arq. Candela Obregón" class="h-10 w-auto">
+                    <img src="/src/assets/img/logo.png" alt="Logo Arq. Candela Obregón" class="h-10 w-auto">
                     <div class="hidden lg:block leading-tight">
                         <h1 class="text-base font-bold text-emet-heading tracking-tight whitespace-nowrap">ARQ. CANDELA
                             OBREGÓN</h1>
@@ -184,23 +95,25 @@
     </nav>
 
     <!-- 3. HERO SECTION -->
-    <!-- 3. HERO SECTION -->
     <section id="inicio" class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden group">
         <!-- Background Carousel -->
         <div id="hero-carousel" class="absolute inset-0 z-0">
             <!-- Slide 1 -->
             <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 slide">
-                <img src="img/hero-industrial.jpg" alt="Architecture Background 1" class="w-full h-full object-cover">
+                <img src="/src/assets/img/hero-industrial.jpg" alt="Architecture Background 1"
+                    class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
             </div>
             <!-- Slide 2 -->
             <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
-                <img src="img/warehouse-bg.jpg" alt="Architecture Background 2" class="w-full h-full object-cover">
+                <img src="/src/assets/img/warehouse-bg.jpg" alt="Architecture Background 2"
+                    class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
             </div>
             <!-- Slide 3 -->
             <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
-                <img src="img/engineer-site.jpg" alt="Architecture Background 3" class="w-full h-full object-cover">
+                <img src="/src/assets/img/engineer-site.jpg" alt="Architecture Background 3"
+                    class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
             </div>
         </div>
@@ -260,7 +173,6 @@
     </section>
 
     <!-- 5. SERVICIOS PROFESIONALES -->
-    <!-- 5. SERVICIOS PROFESIONALES -->
     <section id="servicios" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -278,7 +190,7 @@
                 <!-- Área 1: Facility Management -->
                 <div class="flex flex-col group">
                     <div class="rounded-xl overflow-hidden h-64 mb-8 shadow-lg">
-                        <img src="img/warehouse-bg.jpg" alt="Facility Management"
+                        <img src="/src/assets/img/warehouse-bg.jpg" alt="Facility Management"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-bold text-emet-heading mb-4">Gestión & Facility Management</h3>
@@ -302,7 +214,7 @@
                 <!-- Área 2: Proyectos -->
                 <div class="flex flex-col group">
                     <div class="rounded-xl overflow-hidden h-64 mb-8 shadow-lg">
-                        <img src="img/blueprints.jpg" alt="Proyectos de Arquitectura"
+                        <img src="/src/assets/img/blueprints.jpg" alt="Proyectos de Arquitectura"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-bold text-emet-heading mb-4">Proyectos & Arquitectura</h3>
@@ -326,7 +238,7 @@
                 <!-- Área 3: Obras y Seguridad -->
                 <div class="flex flex-col group">
                     <div class="rounded-xl overflow-hidden h-64 mb-8 shadow-lg">
-                        <img src="img/engineer-site.jpg" alt="Obras y Seguridad"
+                        <img src="/src/assets/img/engineer-site.jpg" alt="Obras y Seguridad"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-bold text-emet-heading mb-4">Obras & Seguridad</h3>
@@ -460,7 +372,7 @@
                 <!-- Foto de la arquitecta -->
                 <div
                     class="w-64 h-64 bg-white rounded-full mx-auto shadow-xl flex items-center justify-center border-4 border-emet-blue overflow-hidden p-1">
-                    <img src="img/profile-candela.jpg" class="w-full h-full object-cover rounded-full"
+                    <img src="/src/assets/img/profile-candela.jpg" class="w-full h-full object-cover rounded-full"
                         alt="Arq. Candela Obregón">
                 </div>
             </div>
@@ -563,7 +475,8 @@
 
                 <!-- Col 1 -->
                 <div>
-                    <img src="img/logo.png" alt="Logo Footer" class="h-12 w-auto mb-6 brightness-0 invert opacity-90">
+                    <img src="/src/assets/img/logo.png" alt="Logo Footer"
+                        class="h-12 w-auto mb-6 brightness-0 invert opacity-90">
                     <p class="text-blue-100 text-sm leading-relaxed">
                         Transformamos espacios industriales y corporativos mediante gestión técnica y proyectos
                         eficientes.
@@ -625,77 +538,8 @@
         </div>
     </footer>
 
-    <!-- Init Icons -->
-    <script>
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const closeBtn = document.getElementById('close-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
-
-        function toggleMenu() {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            document.body.classList.toggle('overflow-hidden');
-        }
-
-        btn.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
-
-        links.forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
-
-        // Hero Carousel Logic
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSlide = 0;
-        const slideInterval = 5000; // 5 seconds
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.remove('opacity-0');
-                    slide.classList.add('opacity-100');
-                } else {
-                    slide.classList.remove('opacity-100');
-                    slide.classList.add('opacity-0');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Event Listeners
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetTimer();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetTimer();
-        });
-
-        // Auto Play
-        let autoPlay = setInterval(nextSlide, slideInterval);
-
-        function resetTimer() {
-            clearInterval(autoPlay);
-            autoPlay = setInterval(nextSlide, slideInterval);
-        }
-    </script>
+    <!-- Main Module Script -->
+    <script type="module" src="/src/js/main.js"></script>
 </body>
 
 </html>

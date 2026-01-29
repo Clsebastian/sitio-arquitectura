@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candela Obregón | Project Architect & Facility Management</title>
+    <!-- Fuentes Google: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-ClgC73n5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D-YJjb-H.css">
+</head>
+
+<body class="antialiased bg-white">
+
+    <!-- 1. TOP BAR -->
+    <div class="bg-emet-dark text-white py-2 text-sm hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i>
+                    contacto@candelaobregon.com</span>
+                <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Corrientes,
+                    Argentina</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-blue-200 transition"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-blue-200 transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <span class="flex items-center gap-2 font-semibold"><i data-lucide="phone" class="w-4 h-4"></i> Whatsapp
+                    Disponible</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. NAVBAR (Sticky) -->
+    <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="/assets/logo-DYXs6o1o.png" alt="Logo Arq. Candela Obregón" class="h-10 w-auto">
+                    <div class="hidden lg:block leading-tight">
+                        <h1 class="text-base font-bold text-emet-heading tracking-tight whitespace-nowrap">ARQ. CANDELA
+                            OBREGÓN</h1>
+                        <p class="text-[10px] text-emet-blue tracking-widest uppercase font-semibold whitespace-nowrap">
+                            Project Architect & FM</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                    <a href="#inicio"
+                        class="nav-link text-xs font-semibold uppercase tracking-wide whitespace-nowrap">Inicio</a>
+                    <a href="#quienes-somos"
+                        class="nav-link text-xs font-semibold uppercase tracking-wide whitespace-nowrap">Quiénes
+                        Somos</a>
+                    <a href="#servicios"
+                        class="nav-link text-xs font-semibold uppercase tracking-wide whitespace-nowrap">Servicios</a>
+                    <a href="#metodologia"
+                        class="nav-link text-xs font-semibold uppercase tracking-wide whitespace-nowrap">Cómo
+                        Trabajamos</a>
+                    <a href="#experiencia"
+                        class="nav-link text-xs font-semibold uppercase tracking-wide whitespace-nowrap">Experiencia</a>
+                    <a href="#contacto"
+                        class="btn-primary px-5 py-2 text-xs font-bold shadow-lg shadow-blue-500/20 whitespace-nowrap">Solicitar
+                        asesoramiento</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-emet-heading focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 z-50 bg-white flex-col pt-24 px-6 space-y-6 lg:hidden overflow-y-auto">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-emet-heading">
+                <i data-lucide="x" class="h-8 w-8"></i>
+            </button>
+            <a href="#inicio" class="text-xl font-bold text-emet-heading block border-b pb-4 mobile-link">Inicio</a>
+            <a href="#quienes-somos" class="text-xl font-bold text-emet-heading block border-b pb-4 mobile-link">Quiénes
+                Somos</a>
+            <a href="#servicios"
+                class="text-xl font-bold text-emet-heading block border-b pb-4 mobile-link">Servicios</a>
+            <a href="#metodologia"
+                class="text-xl font-bold text-emet-heading block border-b pb-4 mobile-link">Metodología</a>
+            <a href="#experiencia"
+                class="text-xl font-bold text-emet-heading block border-b pb-4 mobile-link">Experiencia</a>
+            <a href="#contacto" class="text-xl font-bold text-emet-blue block mobile-link">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- 3. HERO SECTION -->
+    <section id="inicio" class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden group">
+        <!-- Background Carousel -->
+        <div id="hero-carousel" class="absolute inset-0 z-0">
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 slide">
+                <img src="/assets/hero-industrial-Q8XNtdaR.jpg" alt="Architecture Background 1"
+                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                <img src="/assets/warehouse-bg-Bpl4RpdF.jpg" alt="Architecture Background 2"
+                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                <img src="/assets/engineer-site-CxAut-SQ.jpg" alt="Architecture Background 3"
+                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button id="prevBtn"
+            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-emet-blue/80 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110 border border-white/20">
+            <i data-lucide="chevron-left" class="w-8 h-8"></i>
+        </button>
+        <button id="nextBtn"
+            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-emet-blue/80 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110 border border-white/20">
+            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+        </button>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-lg text-white">
+                    Project Architect & <br>
+                    <span class="text-emet-blue">Facility Management</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-6 text-gray-200">
+                    Gestión técnica, proyectos y mejora de infraestructura para empresas e industrias.
+                </p>
+                <div class="w-20 h-1 bg-emet-blue mb-8"></div>
+                <p class="text-base md:text-lg text-gray-300 mb-10 leading-relaxed font-light">
+                    Candela Obregón Arquitecta es un estudio profesional especializado en el diagnóstico, planificación
+                    y desarrollo de proyectos técnicos para entornos industriales y corporativos, con foco en la
+                    seguridad, la normativa vigente y la eficiencia operativa.
+                </p>
+                <a href="#contacto" class="btn-primary px-8 py-3.5 text-base font-bold shadow-xl">
+                    Solicitar asesoramiento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. QUIENES SOMOS -->
+    <section id="quienes-somos" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emet-heading">Candela Obregón Arquitecta</h2>
+            <div class="section-separator mb-10"></div>
+
+            <p class="text-lg text-emet-text leading-relaxed mb-8">
+                Candela Obregón Arquitecta es un estudio profesional orientado a brindar servicios de <strong
+                    class="text-emet-dark">Project Architecture y Facility Management</strong> para empresas, industrias
+                y organizaciones.
+            </p>
+            <p class="text-lg text-emet-text leading-relaxed mb-8">
+                Acompañamos a nuestros clientes en la organización, mejora y optimización de sus instalaciones desde una
+                mirada técnica, legal y operativa.
+            </p>
+            <p class="text-xl font-medium text-emet-blue leading-relaxed">
+                Nuestro objetivo es transformar espacios productivos en entornos más seguros, eficientes y ordenados, a
+                través de proyectos claros, soluciones técnicas y gestión profesional.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. SERVICIOS PROFESIONALES -->
+    <section id="servicios" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-emet-heading">Servicios Profesionales</h2>
+                <div class="section-separator"></div>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-emet-text">
+                    Soluciones integrales divididas en tres áreas estratégicas para garantizar la eficiencia y seguridad
+                    de su infraestructura.
+                </p>
+            </div>
+
+            <!-- Grid 3 Columnas -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <!-- Área 1: Facility Management -->
+                <div class="flex flex-col group">
+                    <div class="rounded-xl overflow-hidden h-64 mb-8 shadow-lg">
+                        <img src="/assets/warehouse-bg-Bpl4RpdF.jpg" alt="Facility Management"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-emet-heading mb-4">Gestión & Facility Management</h3>
+                    <ul class="space-y-3 text-sm text-emet-text mb-8 flex-grow">
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Gestión técnica
+                            integral de instalaciones.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Planes de
+                            mantenimiento preventivo.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Auditorías de
+                            infraestructura.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Relevamientos
+                            edilicios y diagnóstico.</li>
+                    </ul>
+                    <div>
+                        <a href="#contacto"
+                            class="inline-block bg-emet-blue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emet-dark transition duration-300 text-sm tracking-wide">VER
+                            MÁS</a>
+                    </div>
+                </div>
+
+                <!-- Área 2: Proyectos -->
+                <div class="flex flex-col group">
+                    <div class="rounded-xl overflow-hidden h-64 mb-8 shadow-lg">
+                        <img src="/assets/blueprints-BfSRBHpq.jpg" alt="Proyectos de Arquitectura"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-emet-heading mb-4">Proyectos & Arquitectura</h3>
+                    <ul class="space-y-3 text-sm text-emet-text mb-8 flex-grow">
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Proyectos de
+                            accesos y circulaciones.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Reformas
+                            corporativas e industriales.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Proyectos para
+                            habilitaciones.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Legajos técnicos
+                            y documentación.</li>
+                    </ul>
+                    <div>
+                        <a href="#contacto"
+                            class="inline-block bg-emet-blue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emet-dark transition duration-300 text-sm tracking-wide">VER
+                            MÁS</a>
+                    </div>
+                </div>
+
+                <!-- Área 3: Obras y Seguridad -->
+                <div class="flex flex-col group">
+                    <div class="rounded-xl overflow-hidden h-64 mb-8 shadow-lg">
+                        <img src="/assets/engineer-site-CxAut-SQ.jpg" alt="Obras y Seguridad"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-emet-heading mb-4">Obras & Seguridad</h3>
+                    <ul class="space-y-3 text-sm text-emet-text mb-8 flex-grow">
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Dirección y
+                            control de obras.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Señalización
+                            vial y de seguridad.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Supervisión de
+                            contratistas.</li>
+                        <li class="flex items-start"><span class="text-emet-blue mr-2 text-lg">•</span> Planos de
+                            evacuación y normativa.</li>
+                    </ul>
+                    <div>
+                        <a href="#contacto"
+                            class="inline-block bg-emet-blue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emet-dark transition duration-300 text-sm tracking-wide">VER
+                            MÁS</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. METODOLOGIA DE TRABAJO -->
+    <section id="metodologia" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-emet-heading">Cómo Trabajamos</h2>
+                <div class="section-separator"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Step 1 -->
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-emet-blue flex items-center justify-center mx-auto mb-4 group-hover:bg-emet-blue group-hover:text-white transition duration-300">
+                        <span class="text-xl font-bold">1</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Relevamiento</h3>
+                    <p class="text-sm text-emet-text">Visita, análisis y datos.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-emet-blue flex items-center justify-center mx-auto mb-4 group-hover:bg-emet-blue group-hover:text-white transition duration-300">
+                        <span class="text-xl font-bold">2</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Diagnóstico</h3>
+                    <p class="text-sm text-emet-text">Problemáticas y riesgos.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-emet-blue flex items-center justify-center mx-auto mb-4 group-hover:bg-emet-blue group-hover:text-white transition duration-300">
+                        <span class="text-xl font-bold">3</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Proyecto</h3>
+                    <p class="text-sm text-emet-text">Propuestas y planos.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-emet-blue flex items-center justify-center mx-auto mb-4 group-hover:bg-emet-blue group-hover:text-white transition duration-300">
+                        <span class="text-xl font-bold">4</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Presupuesto</h3>
+                    <p class="text-sm text-emet-text">Costos y alternativas.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-emet-blue flex items-center justify-center mx-auto mb-4 group-hover:bg-emet-blue group-hover:text-white transition duration-300">
+                        <span class="text-xl font-bold">5</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Ejecución</h3>
+                    <p class="text-sm text-emet-text">Dirección y control.</p>
+                </div>
+                <!-- Step 6 -->
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-emet-blue flex items-center justify-center mx-auto mb-4 group-hover:bg-emet-blue group-hover:text-white transition duration-300">
+                        <span class="text-xl font-bold">6</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Cierre</h3>
+                    <p class="text-sm text-emet-text">Informe final.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. EXPERIENCIA -->
+    <section id="experiencia" class="py-20 bg-emet-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Experiencia y Proyectos</h2>
+            <div class="w-16 h-1 bg-white mx-auto mb-10"></div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+                <div class="p-4 border border-blue-400/30 rounded-lg hover:bg-white/5 transition">
+                    <i data-lucide="factory" class="w-10 h-10 mx-auto mb-3 text-blue-300"></i>
+                    <h4 class="font-semibold text-sm text-white">Plantas Industriales</h4>
+                </div>
+                <div class="p-4 border border-blue-400/30 rounded-lg hover:bg-white/5 transition">
+                    <i data-lucide="warehouse" class="w-10 h-10 mx-auto mb-3 text-blue-300"></i>
+                    <h4 class="font-semibold text-sm text-white">Establecimientos Productivos</h4>
+                </div>
+                <div class="p-4 border border-blue-400/30 rounded-lg hover:bg-white/5 transition">
+                    <i data-lucide="route" class="w-10 h-10 mx-auto mb-3 text-blue-300"></i>
+                    <h4 class="font-semibold text-sm text-white">Proyectos Viales</h4>
+                </div>
+                <div class="p-4 border border-blue-400/30 rounded-lg hover:bg-white/5 transition">
+                    <i data-lucide="settings-2" class="w-10 h-10 mx-auto mb-3 text-blue-300"></i>
+                    <h4 class="font-semibold text-sm text-white">Facility Management</h4>
+                </div>
+                <div class="p-4 border border-blue-400/30 rounded-lg hover:bg-white/5 transition">
+                    <i data-lucide="shield-check" class="w-10 h-10 mx-auto mb-3 text-blue-300"></i>
+                    <h4 class="font-semibold text-sm text-white">Higiene y Seguridad</h4>
+                </div>
+                <div class="p-4 border border-blue-400/30 rounded-lg hover:bg-white/5 transition">
+                    <i data-lucide="building" class="w-10 h-10 mx-auto mb-3 text-blue-300"></i>
+                    <h4 class="font-semibold text-sm text-white">Infraestructura Corp.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SOBRE LA PROFESIONAL -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3">
+                <!-- Foto de la arquitecta -->
+                <div
+                    class="w-64 h-64 bg-white rounded-full mx-auto shadow-xl flex items-center justify-center border-4 border-emet-blue overflow-hidden p-1">
+                    <img src="/assets/profile-candela-D9xCD2vw.jpg" class="w-full h-full object-cover rounded-full"
+                        alt="Arq. Candela Obregón">
+                </div>
+            </div>
+            <div class="md:w-2/3">
+                <h2 class="text-3xl font-bold text-emet-heading mb-2">Dirección Profesional</h2>
+                <h3 class="text-xl font-semibold text-emet-blue mb-6">Arq. Candela Obregón <span
+                        class="text-sm font-normal text-gray-500 block md:inline">| MP 5181 M.M A-275</span></h3>
+
+                <p class="text-lg text-emet-text mb-6 leading-relaxed">
+                    Arquitecta especializada en gestión técnica, Facility Management, relevamientos técnicos y proyectos
+                    para industrias y empresas.
+                </p>
+                <p class="text-lg text-emet-text leading-relaxed">
+                    Acompaño a organizaciones a ordenar y optimizar sus espacios desde una mirada técnica y legal,
+                    transformando infraestructura productiva a través de proyectos claros, mantenimiento planificado y
+                    dirección profesional de obras.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONTACTO -->
+    <section id="contacto" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-12">
+            <!-- Info -->
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold text-emet-heading mb-6">Contacto</h2>
+                <div class="w-12 h-1 bg-emet-blue mb-8"></div>
+
+                <h3 class="text-xl font-semibold mb-4 text-emet-heading">¿Querés mejorar la infraestructura de tu
+                    empresa?</h3>
+                <p class="text-emet-text mb-10 text-lg">
+                    Completá el formulario o comunicate directamente para coordinar una reunión técnica.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="mail" class="text-emet-blue w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emet-heading">Email</h4>
+                            <p class="text-emet-text">contacto@candelaobregon.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="phone" class="text-emet-blue w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emet-heading">WhatsApp</h4>
+                            <p class="text-emet-text">+54 9 XXXX-XXXX</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="map-pin" class="text-emet-blue w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emet-heading">Ubicación</h4>
+                            <p class="text-emet-text">Corrientes – Argentina</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="md:w-1/2 bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                <form class="space-y-6"
+                    onsubmit="event.preventDefault(); alert('Mensaje enviado. En breve te contactaremos.');">
+                    <div>
+                        <label class="block text-sm font-bold text-emet-heading mb-2">Nombre Completo</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emet-blue focus:border-emet-blue outline-none transition"
+                            placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-emet-heading mb-2">Email Corporativo</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emet-blue focus:border-emet-blue outline-none transition"
+                            placeholder="nombre@empresa.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-emet-heading mb-2">Necesidad o Consulta</label>
+                        <textarea rows="4"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emet-blue focus:border-emet-blue outline-none transition"
+                            placeholder="Describa brevemente su proyecto o necesidad..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full btn-primary py-4 font-bold text-lg shadow-lg">Solicitar
+                        reunión</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-emet-dark text-white pt-16 pb-8 border-t-8 border-emet-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <!-- Col 1 -->
+                <div>
+                    <img src="/assets/logo-DYXs6o1o.png" alt="Logo Footer"
+                        class="h-12 w-auto mb-6 brightness-0 invert opacity-90">
+                    <p class="text-blue-100 text-sm leading-relaxed">
+                        Transformamos espacios industriales y corporativos mediante gestión técnica y proyectos
+                        eficientes.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Contacto</h4>
+                    <ul class="space-y-4 text-blue-100 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-0.5 text-blue-300"></i>
+                            Corrientes, Argentina
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 mt-0.5 text-blue-300"></i>
+                            contacto@candelaobregon.com
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 mt-0.5 text-blue-300"></i>
+                            Lun - Vie: 8:00 - 18:00
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Accesos Rápidos</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#inicio" class="text-blue-100 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#quienes-somos" class="text-blue-100 hover:text-white transition">Quiénes Somos</a>
+                        </li>
+                        <li><a href="#servicios" class="text-blue-100 hover:text-white transition">Servicios</a></li>
+                        <li><a href="#experiencia" class="text-blue-100 hover:text-white transition">Experiencia</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Síguenos</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emet-blue transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emet-blue transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-sm text-blue-200">
+                <p>&copy; 2024 Arq. Candela Obregón. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Module Script -->
+</body>
+
+</html>
