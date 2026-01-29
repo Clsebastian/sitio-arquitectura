@@ -1,0 +1,65 @@
+<svg width="162" height="100" viewBox="0 0 162 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <defs>
+    <style>
+      .lines { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .border { fill: none; stroke: currentColor; stroke-width: 3; }
+    </style>
+  </defs>
+  
+  <!-- Use currentColor so it inherits text color (or we can force black/white via CSS classes) -->
+  <g class="lines" color="#0f172a"> 
+    <!-- Frame -->
+    <rect x="1" y="1" width="160" height="98" class="border" />
+    
+    <!-- Vertical Divider (Split 100 | 62) -->
+    <line x1="100" y1="0" x2="100" y2="100" />
+    
+    <!-- Horizontal Divider (Split 62 top | 38 bottom in right section) -->
+    <line x1="100" y1="61.8" x2="162" y2="61.8" />
+    
+    <!-- Vertical Divider (Split 38 | 24 in bottom right) -->
+    <line x1="138.2" y1="61.8" x2="138.2" y2="100" />
+    
+    <!-- Horizontal Divider (Smallest visible box) -->
+    <line x1="138.2" y1="85.4" x2="162" y2="85.4" />
+
+    <!-- Spiral Arcs -->
+    <!-- 1. Big Arc (Left Square 100x100) - Start Top-Left(0,0) to Bottom-Right(100,100)? 
+         Spiral usually starts at corner. Let's trace typical Golden Spiral:
+         Center at (100, 100), Radius 100. From (0,100) to (100,0). -> Bottom Left to Top Right?
+         Actually, let's match the user's "Inverted" request where flow goes to the right.
+         Arc from Top-Left (0,0) down to Bottom-Right would be...
+         Let's try standard path:
+         Center (100,100), Start (0,100) [Bottom-Left], Sweep to (100,0) [Top-Right].
+    -->
+    <path d="M 0 100 A 100 100 0 0 1 100 0" />
+    
+    <!-- 2. Second Arc (Top-Right Square 61.8x61.8) 
+         Center (100, 61.8). Start (100,0) to (161.8, 61.8).
+    -->
+    <path d="M 100 0 A 61.8 61.8 0 0 1 161.8 61.8" />
+    
+    <!-- 3. Third Arc (Bottom-Right Square 38.2x38.2)
+         Center (138.2, 61.8). Start (161.8, 61.8) to (123.6, ...)?
+         Wait, 161.8 is right edge.
+         From (161.8, 61.8) down/left to (123.6? No, 138.2 - ...).
+         Let's assume path continues.
+         Center (138.2, 61.8). Radius 38.2.
+         Start (161.8, 61.8). End (138.2, 100).
+    -->
+    <path d="M 161.8 61.8 A 38.2 38.2 0 0 1 138.2 100" />
+    
+    <!-- 4. Fourth Arc
+         Center (138.2, 85.4). Radius 23.6.
+         Start (138.2, 100). End (114.6, 85.4)? No, x must match.
+         Start (138.2, 100). End (114.6... no line at 114).
+         Let's simplify inner detail to avoid mess. 3 arcs is good read.
+    -->
+    <path d="M 138.2 100 A 23.6 23.6 0 0 1 114.6 76.4" opacity="0" /> <!-- Hidden, just structure -->
+    
+    <!-- Inner box line for 3rd square -->
+     <line x1="138.2" y1="61.8" x2="138.2" y2="100"/> <!-- Redundant but explicit -->
+
+  </g>
+</svg>
